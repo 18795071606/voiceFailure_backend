@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinbochuang.template.admin.mapper.FlowMapper">
+
+        <!-- 通用查询映射结果 -->
+        <resultMap id="BaseResultMap" type="com.xinbochuang.template.admin.domain.Flow">
+                    <id column="id" property="id" />
+                <result column="create_time" property="createTime" />
+                    <result column="city" property="city" />
+                    <result column="county" property="county" />
+                    <result column="flow_type" property="flowType" />
+                    <result column="flow_no" property="flowNo" />
+                    <result column="custom_name" property="customName" />
+                    <result column="custom_no" property="customNo" />
+                    <result column="product_number" property="productNumber" />
+                    <result column="custom_service_level" property="customServiceLevel" />
+                    <result column="business_level" property="businessLevel" />
+                    <result column="band_width" property="bandWidth" />
+                    <result column="business_name" property="businessName" />
+                    <result column="business_phone" property="businessPhone" />
+                    <result column="dispatch_name" property="dispatchName" />
+        </resultMap>
+
+        <!-- 通用查询结果列 -->
+        <sql id="Base_Column_List">
+            create_time,
+        id, city, county, flow_type, flow_no, custom_name, custom_no, product_number, custom_service_level, business_level, band_width, business_name, business_phone, dispatch_name
+    </sql>
+
+</mapper>

@@ -1,0 +1,59 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 800
+    min-spare-threads: 30
+
+logging:
+  level:
+    com.xinbochuang: debug
+    org.springframework: warn
+
+spring:
+  messages:
+    basename: i18n/messages
+  thymeleaf:
+    mode: HTML
+    encoding: utf-8
+    cache: false
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size:  10MB
+      max-request-size:  20MB
+  devtools:
+    restart:
+      enabled: true
+
+mybatis-plus:
+  typeAliasesPackage: com.xinbochuang.**.domain
+  mapper-locations: classpath:mybatis/**/*Mapper.xml
+  global-config:
+    db-config:
+      id-type: none
+    banner: false
+
+baidu:
+  appid: 22891826
+  api_key: jPOSbl1Mrj92GEyNvkDXtGDU
+  secret_key: mAlNKDzT6PtGtCljy6FZ8tjNFM6fuNMF
+  grant_type: client_credentials
+  url: https://aip.baidubce.com/oauth/2.0/token
+
+ftp:
+  host: 47.95.214.165
+  port: 21
+  account: ftpuser
+  password: xbc123456
+  dir: /123/
+  localPath: /Users/jessie/Documents/workspace/upload/excel
+  firstPath: https://travelhidden.aaay.xin/voiceFailure_web/view/index.html?
+Eoms:
+  baseUrl:  http://10.236.139.148:8100/eoms/services/GDCWebService?wsdl

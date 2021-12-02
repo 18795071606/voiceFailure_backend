@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinbochuang.template.admin.mapper.TsFlowMapper">
+
+        <!-- 通用查询映射结果 -->
+        <resultMap id="BaseResultMap" type="com.xinbochuang.template.admin.domain.TsFlow">
+            <id column="id" property="id" />
+            <result column="kdzh" property="kdzh" />
+            <result column="phone" property="phone" />
+            <result column="title" property="title" />
+            <result column="city" property="city" />
+            <result column="county" property="county" />
+            <result column="housing" property="housing" />
+            <result column="status" property="status" />
+            <result column="address" property="address" />
+            <result column="territory" property="territory" />
+            <result column="deal_time" property="dealTime" />
+            <result column="maintainteam_name" property="maintainteamName" />
+            <result column="team_id" property="teamId" />
+            <result column="route" property="route" />
+            <result column="business_type" property="businessType" />
+            <result column="business_type" property="businessType" />
+            <result column="re_substation" property="reSubstation" />
+            <result column="state" property="state" />
+        </resultMap>
+
+
+    <select id="findTsFlowByKdzh" parameterType="com.xinbochuang.template.admin.domain.TsFlow" resultType="com.xinbochuang.template.admin.domain.TsFlow">
+        select * from ts_flow where id is not null
+        <if test="kdzh != null and kdzh != ''">
+            and kdzh = #{kdzh}
+        </if>
+        <if test="phone != null and phone != ''">
+            and phone = #{phone}
+        </if>
+    </select>
+
+</mapper>

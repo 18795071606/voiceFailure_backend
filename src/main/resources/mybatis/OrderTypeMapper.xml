@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xinbochuang.template.admin.mapper.OrderTypeMapper">
+
+        <!-- 通用查询映射结果 -->
+        <resultMap id="BaseResultMap" type="com.xinbochuang.template.admin.domain.TsOrderType">
+            <id column="id" property="id" />
+            <result column="pid" property="pid" />
+            <result column="pids" property="pids" />
+            <result column="name" property="name" />
+            <result column="code" property="code" />
+            <result column="order_group" property="orderGroup" />
+            <result column="ordering" property="ordering" />
+        </resultMap>
+
+    <select id="findTsOrdersType" resultType="com.xinbochuang.template.admin.domain.TsOrderType">
+        select * from ts_order_type
+    </select>
+
+    <select id="findTsOrdersPre" parameterType="com.xinbochuang.template.admin.domain.TsOrderType" resultType="java.util.HashMap">
+        select id,name as label from ts_order_type
+         where id is not null
+        <if test="pid != null and pid != ''">
+            and pid = ${pid}
+        </if>
+    </select>
+
+    <select id="findSelectChildByPid" parameterType="com.xinbochuang.template.admin.domain.TsOrderType" resultType="java.util.HashMap">
+        select id,name from ts_order_type
+        where id is not null
+        <if test="pid != null and pid != ''">
+            and pid = ${pid}
+        </if>
+    </select>
+
+</mapper>
